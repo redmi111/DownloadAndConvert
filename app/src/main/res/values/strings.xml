@@ -1,0 +1,360 @@
+<resources>
+    <string name="app_name">simpletools</string>
+
+    <string name="youtube">Youtube</string>
+
+    <string name="instagram">Instagram</string>
+
+    <string name="converting">Converting! Please wait..</string>
+    <string name="download_remain">Youtube download remaining: %1$d</string>
+
+    <string name="upgrade_premium">Premium version</string>
+    <string name="get_unlimited">Get unlimited download?</string>
+    <string name="message_dialog_purchase">With premium version, you can download unlimited ringtones &amp; HD videos and remove Ads.</string>
+    <string name="title_dialog_purchase">Upgrade premium version</string>
+    <string name="restart_take_effect">Restart app to take effect</string>
+    <string name="open_insta">Open Instagram</string>
+
+    <string name="msg_open_insta">Do you want to open Instagram?</string>
+    <string name="download_5">+5 HD video download</string>
+    <string name="download_10">+10 HD video download</string>
+    <string name="download_unlimit">Unlimited download &amp; No ads </string>
+    <string name="no_download">You have 0 download remaining, please purchase to get more download time.</string>
+    <string name="start_label">Start:</string>
+
+    <!-- Labels next to the start and end time edit boxes -->
+    <string name="end_label">End:</string>
+    <string name="edit_intent">Edit</string>
+
+    <string name="time_seconds">seconds</string>
+
+    <string name="what_to_do_with_ringtone">Saved!  Make this your default ringtone or assign it to a contact?</string>
+
+    <!-- After you save a notification or ringtone and have more options
+         for what to do with them -->
+    <string name="set_default_notification">Saved!  Make this your default notification?</string>
+    <string name="make_default_ringtone_button">Make Default</string>
+
+    <string name="choose_contact_ringtone_button">Assign to Contact</string>
+    <string name="do_nothing_with_ringtone_button">Close</string>
+    <string name="progress_dialog_loading">Loading…</string>
+
+    <!-- Progress dialog text for loading, recording, or saving... -->
+    <string name="progress_dialog_recording">Recording…</string>
+    <string name="progress_dialog_saving">Saving…</string>
+    <string name="progress_dialog_cancel">Cancel</string>
+    <string name="progress_dialog_stop">Stop</string>
+    <string name="start_marker">Start marker</string>
+
+    <!-- Image button descriptions for accessibility -->
+
+    <string name="end_marker">End marker</string>
+    <string name="rewind">Rewind</string>
+    <string name="play">Play</string>
+    <string name="stop">Stop</string>
+    <string name="ffwd">Fast forward</string>
+    <string name="zoom_in">Zoom In</string>
+    <string name="zoom_out">Zoom Out</string>
+    <string name="save_button">Save</string>
+    <string name="menu_save">Save</string>
+
+    <!--
+     Menu items
+     -->
+
+    <string name="menu_reset">Reset</string>
+    <string name="menu_about">About</string>
+    <string name="menu_show_all_audio">Show All Audio</string>
+    <string name="context_menu_edit">Edit</string>
+
+    <!--
+     Context menu items
+     -->
+
+    <string name="context_menu_delete">Delete</string>
+    <string name="context_menu_default_ringtone">Set as Default Ringtone</string>
+    <string name="context_menu_contact">Assign to Contact</string>
+    <string name="context_menu_default_notification">Set as Default Notification</string>
+    <string name="file_save_title">Save As:</string>
+
+    <!--
+     File Save dialog
+     -->
+
+    <string name="file_save_button_save">Save</string>
+    <string name="file_save_button_cancel">Cancel</string>
+    <string name="ringtone_type_label">Type:</string>
+
+    <string name="type_music">Music</string>
+
+    <string name="type_alarm">Alarm</string>
+    <string name="type_notification">Notification</string>
+    <string name="type_ringtone">Ringtone</string>
+    <string name="ringtone_name_label">Name:</string>
+
+    <string name="artist_name">Ringdroid</string>
+
+    <string name="delete_ringtone">Delete Ringtone</string>
+
+    <!--
+     Delete confirmation dialog
+     -->
+
+    <string name="delete_alarm">Delete Alarm</string>
+    <string name="delete_notification">Delete Notification</string>
+    <string name="delete_music">Delete Music</string>
+    <string name="delete_audio">Delete Audio</string>
+    <string name="confirm_delete_ringdroid">Are you sure?</string>
+
+    <string name="confirm_delete_non_ringdroid">Are you sure?  This file was not created using Ringdroid!</string>
+    <string name="delete_ok_button">Delete</string>
+
+    <string name="delete_cancel_button">Cancel</string>
+    <string name="delete_failed">Unable to delete file</string>
+
+    <string name="alert_title_success">Success</string>
+
+    <!--
+     Success and error messages
+     -->
+
+    <string name="alert_title_failure">Error</string>
+    <string name="alert_ok_button">OK</string>
+    <string name="alert_yes_button">Yes, please!</string>
+    <string name="alert_no_button">No, thanks.</string>
+    <string name="save_success_message">Saved!</string>
+
+    <string name="default_ringtone_success_message">Changed default ringtone</string>
+    <string name="default_notification_success_message">Changed default notification sound</string>
+    <string name="play_error">Unable to play this media file</string>
+    <string name="no_unique_filename">Unable to find unique filename</string>
+    <string name="record_error">Error recording audio</string>
+    <string name="too_small_error">Can\'t save a file that small, try making it longer.</string>
+    <string name="write_error">Error writing file</string>
+    <string name="read_error">Error reading file</string>
+    <string name="no_space_error">Your SD card is full, there is not enough space to save this file.</string>
+
+    <string name="bad_extension_error">Sorry, Ringdroid is not yet able to edit files of type</string>
+
+    <string name="no_extension_error">Sorry, Ringdroid can\'t edit a file if it doesn\'t have an extension like .mp3 or .wav</string>
+    <string name="choose_contact_title">Assign ringtone to which contact?</string>
+
+    <!--
+     Choose Contact Activity
+     -->
+
+    <string name="success_contact_ringtone">Successfully assigned ringtone to:</string>
+    <string name="about_title">About Ringdroid</string>
+
+    <!--
+     About
+     -->
+
+    <string name="about_text"><![CDATA[Use Ringdroid to edit MP3, OGG, WAV, AAC, and AMR audio files and create ringtones, alarms, and notifications from them.\n\nTip: copy audio files to your SD card using a USB cable.\n\nTip: tap anywhere on the waveform to start playing at that position.\n\nTip: while playing, tap the word Start or End to quickly set the start and end markers to the current playback time.\n\nVersion %s\n\nDeveloper: Dominic Mazzoni, Nicolas Faralli\nGraphics: Joseph Wain\nSupport and evangelizing: Eugene Koh\nEnhancements: Dan Klufas\n\nRingdroid is free software, distributed under the Apache 2.0 license.  Source code is on github.com/google/ringdroid\n]]></string>
+    <string name="go_home">Home</string>
+
+    <!--    new-->
+
+    <string name="about">About</string>
+    <string name="youp3_youtube_to_mp3">YouP3</string>
+    <string name="dev_mail">pratimdevonplay@gmail.com</string>
+    <string name="dsl">This application is only to be used for personal purposes. Please read the TOS Section.</string>
+    <string name="lsc">YouP3 is licensed under the terms of Apache 2.0 license.\n</string>
+    <string name="lsc2">Application logo,status logos and theme logos are copyright of the developer.Additionally, some icons have been distributed under the CC-BY 4.0 license and are copyrighted by Google, Inc.\n\nNavBar Cover Art by developer\n</string>
+    <string name="license">License</string>
+    <string name="disclaimer">Disclaimer</string>
+    <string name="http_github_com_exploitr_login">http://github.com/exploitr/youp3</string>
+    <string name="http_exploitr_wordpress_com">http://exploitrme.wordpress.com</string>
+    <string name="whois">Copyrighted by ExploiTR / Apache 2.0</string>
+    <string name="TOS">TOS</string>
+    <string name="textlast">As written in Youtube Terms of Service,\n\n"You shall not download any Content unless you see a “download” or similar link displayed by YouTube on the Service for that Content.You shall not copy, reproduce, make available online or electronically transmit, publish, adapt, distribute, transmit, broadcast, display, sell, license, or otherwise exploit any Content for any other purposes without the prior written consent of YouTube or the respective licensors of the Content. YouTube and its licensors reserve all rights not expressly granted in and to the Service and the Content." [Source: https://www.youtube.com/static?template=terms ( goto section 5B)].\n\nSo, You are violating Youtube TOS while downloading and saving media content from youtube offline. The developer isn\'t intended to do that and doesn\'t support that, and takes NO responsibility for what you do using YouP3.</string>
+    <string name="go_exit">Exit</string>
+    <string name="go_settings">Settings</string>
+    <string name="fullscreen_mode">Fullscreen Mode</string>
+    <string name="remove_toolbar_experimental">Remove Toolbar </string>
+    <string name="go_downloads">Downloads</string>
+    <string name="no_downloads">No Downloads</string>
+    <string name="sample_name">Sample Name</string>
+    <string name="desktop_mode">Desktop Mode (beta)</string>
+    <string name="_5_mb">5 MB</string>
+    <string name="normal_des">WYSN : Basic Mode uses WebView API(s), and it uses a normal API which is written to work in this way. It may be unstable, can\'t bypass ads, provides only AUDIO files (mp3) but normally doesn\'t fail anyway.</string>
+    <string name="adv_des">WYSN : Advanced Mode uses a library which also depends on a library which depends on - How Google writes YouTube\'s \'JavaScript(s)\'. So, though it provides options to download much type of video/audio(s) it can fail. Also, it\'s written by third-party, so support also can be stopped from them.</string>
+    <string name="bookmark">Bookmark</string>
+    <string name="show_bookmarks">Show Bookmarks</string>
+    <string name="no_bookmarks">No Bookmarks</string>
+    <string name="go_pages">Pages</string>
+    <string name="osl">Open Source Licenses</string>
+    <string name="please_have_patience">Please have patience…</string>
+    <string name="report_issue">Report Issue</string>
+    <string name="okay">Okay</string>
+    <string name="browsing_configuration">Browsing Configuration</string>
+    <string name="download_folder">Download Folder</string>
+    <string name="sdcard">/sdcard/</string>
+    <string name="wrong_path_set_please_correct">Wrong Path Is Set , Please Correct It</string>
+    <string name="_search">Search</string>
+    <string name="_music">Music</string>
+    <string name="_96_kbps">96k</string>
+    <string name="_128_kbps">128k</string>
+    <string name="_192_kbps">192k</string>
+    <string name="music_bitrate_selection">Music Bitrate Selection</string>
+    <string name="_video">Video</string>
+    <string name="_144_p">144P</string>
+    <string name="_240_p">240P</string>
+    <string name="_320P_text">360P</string>
+    <string name="_720_p">720P</string>
+    <string name="_1080_p">1080P</string>
+    <string name="_480_p">480P</string>
+    <string name="_2160_p_4k">4K</string>
+    <string name="video_silent">Video(Slient)</string>
+    <string name="dismiss">Dismiss</string>
+    <string name="_1440_p">1440P</string>
+    <string name="_160_k">160K</string>
+    <string name="_64_k">64K</string>
+    <string name="auto_search_videos_when_typed">auto_search_videos_when_typed</string>
+    <string name="basic_enabled_advanced_disabled">basic_enabled_advanced_disabled</string>
+    <string name="_agree">I agree</string>
+    <string name="download_mode">Download Mode</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="clear">Clear</string>
+    <string name="ent_fname">Enter File Name To Save</string>
+    <string name="ent_fname_noext">Simple Name Without Extension</string>
+    <string name="invalid_characters_detected">Invalid Characters Detected</string>
+    <string name="delete_download_history">Delete Download History</string>
+    <string name="some_filename_sample">some_filename_sample_</string>
+    <string name="delete_file_too">Delete file too ?</string>
+    <string name="bug_report">Bug Report</string>
+    <string name="audio_converter">Audio Converter</string>
+    <string name="input_file">Input File</string>
+    <string name="select_audio_file">Select Audio File</string>
+    <string name="edit_file_audio">edit file audio</string>
+    <string name="output_file_format">Output File Format</string>
+    <string name="please_wait_a_minute">Loading FFMPEG, wait.</string>
+    <string name="mp3">MP3</string>
+    <string name="wav">WAV</string>
+    <string name="wma">WMA</string>
+    <string name="aac">AAC</string>
+    <string name="m4a">M4A</string>
+    <string name="flac">FLAC</string>
+    <string name="output_file_directory">Output File Directory</string>
+    <string name="msg_running">NewPipe Downloading</string>
+
+    <!--    newpie-->
+    <string name="msg_running_detail">Tap for details</string>
+    <string name="no_available_dir">Please define a download folder later in settings</string>
+    <string name="download_failed">Download failed</string>
+    <string name="download_finished">Download finished</string>
+    <string name="download_finished_more">%s downloads finished</string>
+    <string name="file_name_empty_error">Filename cannot be empty</string>
+    <string name="msg_popup_permission">This permission is needed to\nopen in popup mode</string>
+    <string name="caption_auto_generated">Auto-generated</string>
+    <string name="unknown_content">[Unknown]</string>
+    <string name="general_error">Error</string>
+    <string name="download_dialog_title">Download</string>
+    <string name="no_streams_available_download">No streams available to download</string>
+    <string name="overwrite">Overwrite</string>
+    <!-- dialog about existing downloads -->
+    <string name="overwrite_unrelated_warning">A file with this name already exists</string>
+    <string name="overwrite_finished_warning">A downloaded file with this name already exists</string>
+    <string name="overwrite_failed">cannot overwrite the file</string>
+    <string name="download_already_running">There is a download in progress with this name</string>
+    <string name="download_already_pending">There is a pending download with this name</string>
+    <string name="generate_unique_name">Generate unique name</string>
+    <string name="cancel">Cancel</string>
+    <string name="error_file_creation">The file can not be created</string>
+    <!-- message dialog about download error -->
+    <string name="error_path_creation">The destination folder can not be created</string>
+    <string name="permission_denied">Action denied by the system</string>
+    <string name="downloads_title">Downloads Youtube</string>
+    <string name="clear_finished_download">Clear finished downloads</string>
+    <string name="confirm_prompt">Are you sure?</string>
+    <string name="missions_header_finished">Finished</string>
+    <string name="missions_header_pending">Pending</string>
+    <string name="missing_file">File moved or deleted</string>
+    <string name="toast_no_player">No app installed to play this file</string>
+    <string name="paused">paused</string>
+    <string name="queued">queued</string>
+    <string name="pause">Pause</string>
+    <string name="post_processing">post-processing</string>
+    <string name="file_deleted">File deleted</string>
+    <string name="undo">Undo</string>
+    <string name="start">Start</string>
+    <string name="retry">Retry</string>
+    <string name="delete">Delete</string>
+    <string name="show_error">Show error</string>
+    <string name="link_error">Link not support!</string>
+    <string name="notification_channel_id" translatable="false">newpipe</string>
+
+    <string name="downloads_storage_ask" translatable="false">downloads_storage_ask</string>
+    <string name="downloads_maximum_retry" translatable="false">downloads_max_retry</string>
+    <string name="downloads_maximum_retry_default" translatable="false">3</string>
+    <string name="downloads_cross_network" translatable="false">cross_network_downloads</string>
+    <string name="downloads_queue_limit" translatable="false">downloads_queue_limit</string>
+    <string name="download_path_video_key" translatable="false">download_path</string>
+    <string name="download_path_audio_key" translatable="false">download_path_audio</string>
+    <string name="default_download_threads" translatable="false">default_download_threads</string>
+    <string name="settings_file_charset_key" translatable="false">file_rename_charset</string>
+
+    <!-- FileName Downloads  -->
+    <string name="settings_file_replacement_character_key" translatable="false">file_replacement_character</string>
+    <string name="settings_file_replacement_character_default_value" translatable="false">_</string>
+    <string name="charset_letters_and_digits_value" translatable="false">CHARSET_LETTERS_AND_DIGITS</string>
+    <string name="charset_most_special_value" translatable="false">CHARSET_MOST_SPECIAL</string>
+    <string name="default_file_charset_value" translatable="false">@string/charset_most_special_value</string>
+    <string name="app_update_notification_channel_id" translatable="false">newpipeAppUpdate</string>
+
+    <string name="app_update_notification_channel_name">App Update Notification</string>
+    <string name="app_update_notification_channel_description">Notifications for new NewPipe version</string>
+    <string name="notification_channel_name">NewPipe Notification</string>
+
+    <string name="notification_channel_description">Notifications for App background and popup players</string>
+    <string name="limit_mobile_data_usage_key" translatable="false">limit_mobile_data_usage</string>
+
+    <!-- Limit mobile data usage  -->
+    <string name="limit_data_usage_none_key" translatable="false">limit_data_usage_none</string>
+    <string name="video_mp4_key" translatable="false">video_mp4</string>
+
+    <string name="video_webm_key" translatable="false">video_webm</string>
+    <string name="video_3gp_key" translatable="false">video_3gp</string>
+    <string name="audio_m4a_key" translatable="false">audio_m4a</string>
+    <string name="audio_webm_key" translatable="false">audio_webm</string>
+    <string name="default_audio_format_key" translatable="false">default_audio_format</string>
+    <string name="default_audio_format_value" translatable="false">@string/audio_m4a_key</string>
+    <string name="show_higher_resolutions_key" translatable="false">show_higher_resolutions</string>
+    <string name="default_video_format_key" translatable="false">default_video_format</string>
+    <string name="default_video_format_value" translatable="false">@string/video_mp4_key</string>
+    <string name="best_resolution_key" translatable="false">best_resolution</string>
+    <string name="default_resolution_key" translatable="false">default_resolution</string>
+    <string name="default_resolution_value" translatable="false">360p</string>
+    <string name="reward_video_unavailable">Reward video is unavailable!</string>
+    <string name="purchase">Purchase</string>
+    <string name="trial">trial</string>
+    <string name="title_dl_plan_dialog">Choose plan to download</string>
+
+    //Download plan dialog
+    <string name="dl_low_quality_audio">Download low quality audio (m4a)</string>
+    <string name="dl_low_quality_video">Download low quality video (mp4, 360p)</string>
+    <string name="dl_high_quality_video_audio">Download high quality video &amp; audio (full option)</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="messages_header">Messages</string>
+
+    <!-- Preference Titles -->
+    <string name="sync_header">Sync</string>
+    <string name="signature_title">Your signature</string>
+
+    <!-- Messages Preferences -->
+    <string name="reply_title">Default reply action</string>
+    <string name="sync_title">Sync email periodically</string>
+
+    <!-- Sync Preferences -->
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string-array name="list_cell">
+        <item>Video Cutter</item>
+        <item>Audio Converter</item>
+        <item>Download Video</item>
+        <item>Settings</item>
+
+    </string-array>
+</resources>

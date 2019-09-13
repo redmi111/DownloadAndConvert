@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/toolbar_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="@color/colorPrimary" />
+
+                <com.miguelcatalan.materialsearchview.MaterialSearchView
+                    android:id="@+id/search_view"
+                    style="@style/MaterialSearchViewStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </FrameLayout>
+
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_2"
+                android:background="@android:color/transparent"
+                android:progressDrawable="@drawable/progress_load_data"
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/ll_purchase"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_height="@dimen/size_52"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorPrimary"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/padding_5"
+            android:paddingBottom="@dimen/padding_5">
+
+
+            <TextView
+                android:id="@+id/tv_getmore"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/vv"
+                android:drawableEnd="@drawable/ic_add_shopping_cart_white_24dp"
+                android:drawablePadding="@dimen/padding_5"
+                android:gravity="center"
+                android:maxLines="2"
+                android:paddingStart="@dimen/padding_5"
+                android:paddingEnd="@dimen/padding_10"
+                android:text="@string/get_unlimited"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_remain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@+id/vv"
+                android:gravity="center"
+                android:maxLines="2"
+                android:paddingStart="@dimen/padding_22"
+                android:paddingEnd="@dimen/padding_10"
+                android:text="@string/download_remain"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+
+            <View
+                android:id="@+id/vv"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:background="@color/color_gray" />
+
+
+        </RelativeLayout>
+
+
+        <WebView
+            android:id="@+id/webview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/ll_purchase"
+            android:layout_below="@+id/ll_top">
+
+        </WebView>
+    </RelativeLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_download"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="70dp"
+        android:focusable="true"
+        android:visibility="gone"
+        app:backgroundTint="@color/colorAccent"
+        app:rippleColor="@color/colorAccent"
+        android:src="@drawable/ic_download_white_24dp" />
+
+</RelativeLayout>
