@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
-    <mapping directory="$PROJECT_DIR$/GifMaker" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/InstaDownload2" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/NewPipe" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/RingtoneMaker" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/SocialVideoDownloader" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/YouP3" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/downloadAllVideosocial" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/instaDownloader" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/kamaloli" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/photoAlbum" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/ringdroid" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/video-transcoder" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
   </component>
 </project>
