@@ -1,25 +1,14 @@
 package com.eztool.mysimpleapp.activities;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.AsyncTask;
-import android.widget.Toast;
 
 import com.eztool.mysimpleapp.model.AudioModel;
-import com.eztool.mysimpleapp.services.ConverterService;
 
-import org.apache.commons.io.FileUtils;
-
-import java.io.File;
-import java.io.IOException;
 import java.lang.ref.WeakReference;
-
-import cafe.adriel.androidaudioconverter.AndroidAudioConverter;
-import cafe.adriel.androidaudioconverter.callback.IConvertCallback;
 
 public class AsynTaskAudioConvert extends AsyncTask<AudioModel, Integer, Long> {
         private WeakReference<Context> contextRef;
-
         public AsynTaskAudioConvert(Context context) {
                 contextRef = new WeakReference<>(context);
         }
