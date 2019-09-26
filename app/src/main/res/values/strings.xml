@@ -105,9 +105,10 @@
     <string name="delete_music">Delete Music</string>
     <string name="delete_audio">Delete Audio</string>
     <string name="confirm_delete_ringdroid">Are you sure?</string>
-
+    <string name="tick">Tick</string>
     <string name="confirm_delete_non_ringdroid">Are you sure?  This file was not created using Ringdroid!</string>
     <string name="delete_ok_button">Delete</string>
+    <string name="video_cutter">Video Cutter</string>
 
     <string name="delete_cancel_button">Cancel</string>
     <string name="delete_failed">Unable to delete file</string>

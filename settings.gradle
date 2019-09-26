@@ -1,2 +1,2 @@
-include ':app'
+include ':app','trimmer-telegram'
 rootProject.name='simpletools'
