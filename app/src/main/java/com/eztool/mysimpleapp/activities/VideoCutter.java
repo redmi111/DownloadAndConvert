@@ -4,6 +4,8 @@ import android.app.ProgressDialog;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,6 +25,7 @@ import com.eztool.mysimpleapp.utils.Utils;
 import com.google.android.material.snackbar.Snackbar;
 
 import org.telegram.messenger.CustomVideoTimelinePlayView;
+import org.telegram.messenger.VideoTrimUtils;
 
 import java.io.File;
 import java.util.Locale;
@@ -67,6 +70,8 @@ public class VideoCutter extends AppCompatActivity {
     private ProgressDialog progressDialog;
     private Runnable updateProgressRunnable;
     private Timer trimDurCounterTimer;
+    private Handler a;
+    ;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -103,6 +108,16 @@ public class VideoCutter extends AppCompatActivity {
             showMessage(e.getMessage());
             return;
         }*/
+
+        Handler handler = new Handler();
+        final Runnable r = new Runnable() {
+            public void run() {
+                Log.d("tuanvn", " " + VideoTrimUtils.getPercent());
+                handler.postDelayed(this, 50);
+            }
+        };
+
+
         Completable trimCompletable = Completable.fromAction(() -> {
             //TrimUtils.trim(videoFile,outDir,trimStartTime,trimEndTime);
             File result = TrimUtils.trimVideo(videoFile, outDir, (int) trimStartTime, (int) trimEndTime);
@@ -111,14 +126,23 @@ public class VideoCutter extends AppCompatActivity {
         trimTask = trimCompletable
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .doOnSubscribe(disposable -> {
-                    showLoading(true, "Trim in progress, please wait...");
-                })
+                .doOnSubscribe(
+                        disposable -> {
+                            handler.postDelayed(r, 50);
+
+                        }
+
+                        /*disposable -> {
+                    showLoading(true, "Trim in " + VideoTrimUtils.getPercent() + ", please wait...");
+                }*/)
                 .subscribe(() -> {
                     showLoading(false, null);
+                    handler.removeCallbacks(r);
+
                     showMessage("Trim success");
                 }, throwable -> {
                     throwable.printStackTrace();
+                    handler.removeCallbacks(r);
                     showLoading(false, null);
                     showMessage(throwable.getMessage());
                 });
@@ -276,8 +300,9 @@ public class VideoCutter extends AppCompatActivity {
                 Timber.d("onLeftProgressChanged " + progress);
                 if (videoView.isPlaying()) {
                     videoView.pause();
+                    playBtn.setVisibility(View.VISIBLE);
                 }
-                //videoView.seekTo((int) (videoDuration * progress));
+                videoView.seekTo((int) (videoDuration * progress));
                 timelineView.setProgress(0);
                 updateVideoInfo();
             }
@@ -287,8 +312,9 @@ public class VideoCutter extends AppCompatActivity {
                 Timber.d("onRightProgressChanged " + progress);
                 if (videoView.isPlaying()) {
                     videoView.pause();
+                    playBtn.setVisibility(View.VISIBLE);
                 }
-                //videoView.seekTo((int) (videoDuration * progress));
+                videoView.seekTo((int) (videoDuration * progress));
                 timelineView.setProgress(0);
                 updateVideoInfo();
             }
@@ -360,7 +386,7 @@ public class VideoCutter extends AppCompatActivity {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe(disposable -> {
-                    showLoading(true, "Convert in progress, please wait...");
+                    showLoading(true, "Convert in " + VideoTrimUtils.getPercent() + ", please wait...");
                 })
                 .subscribe(() -> {
                     showLoading(false, null);
@@ -373,15 +399,6 @@ public class VideoCutter extends AppCompatActivity {
                     showMessage(throwable.getMessage());
                 });
 
-       /* () -> {
-            showLoading(false, null);
-            showMessage("Convert success");
-            onComplete.run();
-        }, throwable -> {
-            throwable.printStackTrace();
-            showLoading(false, null);
-            showMessage(throwable.getMessage());
-        }*/
     }
 
     private void showMessage(String message) {

@@ -8,6 +8,7 @@ import android.media.MediaExtractor;
 import android.media.MediaFormat;
 import android.media.MediaMetadataRetriever;
 import android.os.Build;
+import android.util.Log;
 
 import org.telegram.messenger.video.InputSurface;
 import org.telegram.messenger.video.MP4Builder;
@@ -28,6 +29,11 @@ public class VideoTrimUtils {
     private final static int PROCESSOR_TYPE_MTK = 3;
     private final static int PROCESSOR_TYPE_SEC = 4;
     private final static int PROCESSOR_TYPE_TI = 5;
+
+    private static long start = 0;
+    private static long end = 1;
+    private static long current = 0;
+
 
     @SuppressLint("NewApi")
     public static MediaCodecInfo selectCodec(String mimeType) {
@@ -264,7 +270,9 @@ public class VideoTrimUtils {
 
         String videoPath = videoEditInfo.getSrc().getAbsolutePath();
         long startTime = videoEditInfo.getTrimStartUs();
+        start = startTime;
         long endTime = videoEditInfo.getTrimEndUs();
+        end = endTime;
         int originalWidth = mf.getInteger(MediaFormat.KEY_WIDTH);
         int originalHeight = mf.getInteger(MediaFormat.KEY_HEIGHT);
         int resultWidth = videoEditInfo.getResultWidth();
@@ -370,13 +378,14 @@ public class VideoTrimUtils {
                                     processorType = PROCESSOR_TYPE_TI;
                                 }
                                 if (BuildConfig.DEBUG) {
-                                    Timber.d("codec = " + codecInfo.getName() + " manufacturer = " + manufacturer + "device = " + Build.MODEL);
+                                    Log.d("tuancon", "codec = " + codecInfo.getName() + " manufacturer = " + manufacturer + "device = " + Build.MODEL);
                                 }
                             } else {
                                 colorFormat = MediaCodecInfo.CodecCapabilities.COLOR_FormatSurface;
                             }
                             if (BuildConfig.DEBUG) {
-                                Timber.d("colorFormat = " + colorFormat);
+                                Log.d("tuancon", "colorFormat = " + colorFormat);
+                                Log.d("tuancon", "startTime = " + startTime);
                             }
 
                             int resultHeightAligned = resultHeight;
@@ -597,7 +606,7 @@ public class VideoTrimUtils {
                                         } else if (decoderStatus == MediaCodec.INFO_OUTPUT_FORMAT_CHANGED) {
                                             MediaFormat newFormat = decoder.getOutputFormat();
                                             if (BuildConfig.DEBUG) {
-                                                Timber.d("newFormat = " + newFormat);
+                                                Log.d("tuancon", "newFormat = " + newFormat);
                                             }
                                         } else if (decoderStatus < 0) {
                                             throw new RuntimeException("unexpected result from decoder.dequeueOutputBuffer: " + decoderStatus);
@@ -618,12 +627,13 @@ public class VideoTrimUtils {
                                                 if (info.presentationTimeUs < startTime) {
                                                     doRender = false;
                                                     if (BuildConfig.DEBUG) {
-                                                        Timber.d("drop frame startTime = " + startTime + " present time = " + info.presentationTimeUs);
+                                                        Log.d("tuancon", "drop frame startTime = " + startTime + " present time = " + info.presentationTimeUs);
                                                     }
                                                 } else {
                                                     videoTime = info.presentationTimeUs;
                                                 }
                                             }
+
                                             decoder.releaseOutputBuffer(decoderStatus, doRender);
                                             if (doRender) {
                                                 boolean errorWait = false;
@@ -633,6 +643,11 @@ public class VideoTrimUtils {
                                                     errorWait = true;
                                                     Timber.e(e);
                                                 }
+                                                current = info.presentationTimeUs;
+                                                int out = getPercent();
+                                                Log.d("tuancon", "percent = " + out + "%");
+
+                                                Log.d("tuancon", "current " + current);
                                                 if (!errorWait) {
                                                     if (Build.VERSION.SDK_INT >= 18) {
                                                         outputSurface.drawImage(false);
@@ -648,9 +663,10 @@ public class VideoTrimUtils {
                                                             // TODO below
 //                                                            Utilities.convertVideoFrame(rgbBuf, yuvBuf, colorFormat, resultWidth, resultHeight, padding, swapUV);
                                                             encoder.queueInputBuffer(inputBufIndex, 0, bufferSize, info.presentationTimeUs, 0);
+
                                                         } else {
                                                             if (BuildConfig.DEBUG) {
-                                                                Timber.d("input buffer not available");
+                                                                Log.d("tuancon", "input buffer not available");
                                                             }
                                                         }
                                                     }
@@ -659,7 +675,9 @@ public class VideoTrimUtils {
                                             if ((info.flags & MediaCodec.BUFFER_FLAG_END_OF_STREAM) != 0) {
                                                 decoderOutputAvailable = false;
                                                 if (BuildConfig.DEBUG) {
-                                                    Timber.d("decoder stream end");
+//                                                    Timber.d("decoder stream end");
+                                                    Log.d("tuancon", "decoder stream end");
+                                                    Log.d("tuancon", "endTime = " + endTime);
                                                 }
                                                 if (Build.VERSION.SDK_INT >= 18) {
                                                     encoder.signalEndOfInputStream();
@@ -725,5 +743,19 @@ public class VideoTrimUtils {
         //preferences.edit().putBoolean("isPreviousOk", true).commit();
         //didWriteData(messageObject, cacheFile, true, 0, error);
         return true;
+    }
+
+    public static int getPercent() {
+        float percent;
+        long up = current - start;
+        if (up < 0)
+            up = 0;
+        long down = end - start;
+
+        percent = 100 * up / down;
+
+        percent = Math.round(percent + 0.5);
+
+        return (int) percent;
     }
 }
