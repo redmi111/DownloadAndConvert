@@ -4,6 +4,8 @@ import android.content.Context;
 
 public class Utils {
 
+    public static final String FOLDER_CUTTER = "VideoAudioTools/VideoCutter/";
+
     public static int dp(Context context, float value) {
         if (value == 0) {
             return 0;

@@ -352,8 +352,8 @@
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <string-array name="list_cell">
-        <item>Video Cutter</item>
         <item>Audio Converter</item>
+        <item>Video Cutter</item>
         <item>Download Video</item>
         <item>Settings</item>
 

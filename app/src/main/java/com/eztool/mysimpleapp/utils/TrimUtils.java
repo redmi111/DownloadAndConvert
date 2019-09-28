@@ -34,12 +34,17 @@ public class TrimUtils {
     public static File trimVideo(File src, File dst, int startTime, int endTime) throws IOException {
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.US).format(new Date());
         String fileName = "TRIM_" + timeStamp + ".mp4";
+        if (!dst.exists())
+            dst.mkdirs();
+
         File outputFile = new File(dst, fileName);
-        if (!outputFile.exists()) {
-            outputFile.createNewFile();
+        if (outputFile.exists()) {
+            outputFile.delete();
+
         }
-        File result = VideoTrimUtils.trimVideo(src, outputFile, startTime, endTime);
-        return result;
+        outputFile.createNewFile();
+
+        return VideoTrimUtils.trimVideo(src, outputFile, startTime, endTime);
     }
 
     public static File convertVideo(File src, File dst) throws IOException {

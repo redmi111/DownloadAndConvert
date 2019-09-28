@@ -13,7 +13,7 @@ import java.util.List;
 public class Util {
 
 
-    public static boolean checkAndRequestPermissions(Activity activity) {
+    public static boolean checkAndRequestPermissions(Activity activity, int code) {
 //        int contactPermission = ContextCompat.checkSelfPermission(activity, Manifest.permission.READ_CONTACTS);
 //        int contactWritePermission = ContextCompat.checkSelfPermission(activity, Manifest.permission.WRITE_CONTACTS);
         int modifyAudioPermission = ContextCompat.checkSelfPermission(activity, Manifest.permission.READ_EXTERNAL_STORAGE);
@@ -39,7 +39,7 @@ public class Util {
 
         if (listPermissionsNeeded.size() > 0) {
             ActivityCompat.requestPermissions(activity, listPermissionsNeeded.toArray(new String[0]),
-                    Constants.PERMISSION);
+                    code);
 
             return false;
         }

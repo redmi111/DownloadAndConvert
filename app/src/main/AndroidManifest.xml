@@ -20,6 +20,11 @@
             android:theme="@style/AppTheme">
 
         </activity>
+        <activity
+            android:name=".activities.VideoCutterProgress"
+            android:theme="@style/AppTheme">
+
+        </activity>
         <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

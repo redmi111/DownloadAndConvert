@@ -60,13 +60,13 @@ public class MainActivity extends AppCompatActivity {
         gridView.setOnItemClickListener((adapterView, view, position, l) -> {
             switch (position) {
                 case 0:
-                    if (Util.checkAndRequestPermissions(MainActivity.this)) {
+                    if (Util.checkAndRequestPermissions(MainActivity.this, Constants.PERMISSION_AUDIO)) {
                         Intent contact = new Intent(MainActivity.this, AudioConverter.class);
                         startActivity(contact);
                     }
                     break;
                 case 1:
-                    if (!Util.checkAndRequestPermissions(MainActivity.this)) {
+                    if (!Util.checkAndRequestPermissions(MainActivity.this, Constants.PERMISSION_CUTTER)) {
                         return;
 //                        Intent i = new Intent(MainActivity.this, VideoCutter.class);
 //                        startActivity(i);
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
 //                }
 
 
-                    if (Util.checkAndRequestPermissions(MainActivity.this)) {
+                    if (Util.checkAndRequestPermissions(MainActivity.this, Constants.PERMISSION_DOWNLOAD)) {
                         Intent i = new Intent(MainActivity.this, YoutubeActivity.class);
                         startActivity(i);
                     }
@@ -156,19 +156,42 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        if (requestCode == Constants.PERMISSION) {
-            boolean gotPermission = grantResults.length > 0;
+        boolean gotPermission = grantResults.length > 0;
+        for (int result : grantResults) {
+            gotPermission &= result == PackageManager.PERMISSION_GRANTED;
+        }
+        switch (requestCode) {
+            case Constants.PERMISSION_DOWNLOAD:
 
-            for (int result : grantResults) {
-                gotPermission &= result == PackageManager.PERMISSION_GRANTED;
-            }
 
-            if (gotPermission) {
-                Intent i = new Intent(MainActivity.this, YoutubeActivity.class);
-                startActivity(i);
-            } else {
-                Toast.makeText(this, "Accept permission please!", Toast.LENGTH_SHORT).show();
-            }
+                if (gotPermission) {
+                    Intent i = new Intent(MainActivity.this, YoutubeActivity.class);
+                    startActivity(i);
+                } else {
+                    Toast.makeText(this, "Accept permission please!", Toast.LENGTH_SHORT).show();
+                }
+                break;
+
+            case Constants.PERMISSION_AUDIO:
+
+                if (gotPermission) {
+                    Intent i = new Intent(MainActivity.this, AudioConverter.class);
+                    startActivity(i);
+                } else {
+                    Toast.makeText(this, "Accept permission please!", Toast.LENGTH_SHORT).show();
+                }
+
+                break;
+
+            case Constants.PERMISSION_CUTTER:
+
+                if (gotPermission) {
+                    selectVideo();
+                } else {
+                    Toast.makeText(this, "Accept permission please!", Toast.LENGTH_SHORT).show();
+                }
+
+                break;
         }
     }
 }

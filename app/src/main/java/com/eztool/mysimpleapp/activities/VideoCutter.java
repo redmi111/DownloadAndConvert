@@ -97,17 +97,10 @@ public class VideoCutter extends AppCompatActivity {
 
     @OnClick(R.id.trimBtn)
     public void trimBtn() {
-        //long now = System.currentTimeMillis();
-        File outDir = Environment.getExternalStorageDirectory();
-        /*File outDir = new File(videoFile.getParent(),"trim-"+now+".mp4");
-        try {
-            boolean createFileSuccess = outDir.createNewFile();
-            Timber.d("Create file success: "+createFileSuccess+" - "+outDir.getAbsolutePath());
-        } catch (IOException e) {
-            e.printStackTrace();
-            showMessage(e.getMessage());
-            return;
-        }*/
+        long now = System.currentTimeMillis();
+        File outDir = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + Constants.FOLDER_CUTTER);
+        if (!outDir.exists())
+            outDir.mkdirs();
 
         Handler handler = new Handler();
         final Runnable r = new Runnable() {
